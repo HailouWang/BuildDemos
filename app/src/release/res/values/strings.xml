@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BuildDemos</string>
+
+    <string name="app_name_release_label">app/release/release_MainActivity</string>
+</resources>

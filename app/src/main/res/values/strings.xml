@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BuildDemos</string>
+
+    <string name="app_name_main_label">app/main/main_MainActivity</string>
+</resources>

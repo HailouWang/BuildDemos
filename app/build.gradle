@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            storeFile file('/Users/ifei/my/android_key/BuildDemos.jks')
+            storePassword '52gaofei'
+            keyPassword 'gaofei'
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "hlwang.github.com.builddemos"
+        minSdkVersion 23
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+
+        release {// 备注："release"类型的构建类型 
+            minifyEnabled true
+            //混淆配置文件，返回混淆文件的路径[默认存在proguard-android.txt proguard-android-optimize.txt两个文件。] 
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {// 备注："debug"类型的构建类型 
+            applicationIdSuffix ".debug"
+        }
+
+        jnidebug {
+            // This copies the debuggable attribute and debug signing configurations.
+            initWith debug
+            // 复制 构建类型=“debug”的配置 .
+            applicationIdSuffix ".jnidebug"
+            jniDebuggable true
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.hailouwang:DemosAndApis:1.0.3'
+    testCompile 'junit:junit:4.12'
+}

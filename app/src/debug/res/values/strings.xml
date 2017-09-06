@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BuildDemos</string>
+
+    <string name="app_name_debug_label">app/debug/debug_MainActivity</string>
+</resources>
